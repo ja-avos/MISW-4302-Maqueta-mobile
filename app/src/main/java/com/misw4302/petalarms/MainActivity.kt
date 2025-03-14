@@ -31,6 +31,9 @@ import com.misw4302.petalarms.ui.components.ScreenTitle
 import com.misw4302.petalarms.ui.components.SecondaryBtn
 import com.misw4302.petalarms.ui.components.SectionListItem
 import com.misw4302.petalarms.ui.components.TimeInput
+import com.misw4302.petalarms.ui.screens.HomeScreen
+import com.misw4302.petalarms.ui.screens.SignupScreen
+import com.misw4302.petalarms.ui.screens.StartScreen
 import com.misw4302.petalarms.ui.theme.PetAlarmsTheme
 import java.security.Principal
 
@@ -55,7 +58,7 @@ fun PetAlarms(modifier: Modifier = Modifier) {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        ScreenTitle()
+        HomeScreen()
     }
 }
 

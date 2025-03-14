@@ -25,7 +25,7 @@ import com.misw4302.petalarms.R
 
 @Preview
 @Composable
-fun SectionListItem(imageUrl: String = "", title: String = "Section Name") {
+fun SectionListItem(title: String = "Section Name", backgroundResource: Int = R.mipmap.ic_banner_alarms_foreground) {
     Card(
         shape = RoundedCornerShape(16.dp),
         onClick = {},
@@ -36,7 +36,7 @@ fun SectionListItem(imageUrl: String = "", title: String = "Section Name") {
     ) {
         Box(modifier = Modifier.fillMaxSize()) {
             Image(
-                painter = painterResource(R.mipmap.ic_banner_alarms_foreground),
+                painter = painterResource(backgroundResource),
                 contentDescription = "Alarm Image",
                 contentScale = ContentScale.Crop,
                 modifier = Modifier.fillMaxSize()
@@ -59,14 +59,15 @@ fun SectionListItem(imageUrl: String = "", title: String = "Section Name") {
             Text(
                 text = title,
                 color = MaterialTheme.colorScheme.secondary,
-                fontSize = 20.sp,
+                fontSize = 28.sp,
                 fontWeight = FontWeight.Bold,
                 style = TextStyle(
                     shadow = Shadow(
                         color = Color.Black.copy(alpha = 0.6f), // Semi-transparent shadow
                         offset = Offset(2f, 4f), // Slight bottom-right offset
-                        blurRadius = 6f // Soft blur for smooth effect
-                    )
+                        blurRadius = 12f // Soft blur for smooth effect
+                    ),
+                    fontFamily = MaterialTheme.typography.bodyLarge.fontFamily
                 ),
                 modifier = Modifier
                     .align(Alignment.BottomStart)

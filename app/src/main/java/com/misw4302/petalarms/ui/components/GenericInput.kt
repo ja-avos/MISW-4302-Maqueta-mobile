@@ -1,6 +1,7 @@
 package com.misw4302.petalarms.ui.components
 
 import androidx.compose.foundation.border
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
@@ -36,14 +37,16 @@ fun GenericInput(placeholder: String = "Placeholder", type: InputType = InputTyp
         placeholder = {
             Text(
                 placeholder,
-                fontSize = 18.sp,
-                color = MaterialTheme.colorScheme.onSurface
+                fontSize = 14.sp,
+                color = MaterialTheme.colorScheme.onSurface,
+                lineHeight = 12.sp
             )
         },
         textStyle = TextStyle(
-            fontSize = 18.sp,
+            fontSize = 14.sp,
             color = MaterialTheme.colorScheme.onSurface,
-            fontWeight = FontWeight.Bold
+            fontWeight = FontWeight.Bold,
+            lineHeight = 12.sp
         ),
         colors = TextFieldDefaults.colors(
             focusedContainerColor = Color(0xFFFFF7F2),
@@ -58,6 +61,8 @@ fun GenericInput(placeholder: String = "Placeholder", type: InputType = InputTyp
         },
         shape = RoundedCornerShape(30.dp),
         modifier = Modifier
-            .border(1.dp, Color(0xFFD38B5D), RoundedCornerShape(32.dp))
+            .height(48.dp).padding(0.dp)
+            .border(1.dp, MaterialTheme.colorScheme.primary, RoundedCornerShape(32.dp))
+
     )
 }

@@ -16,14 +16,18 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun LogoText(
     backgroundColor: Color = MaterialTheme.colorScheme.secondary,
-    iconColor: Color = MaterialTheme.colorScheme.onSecondary
+    iconColor: Color = MaterialTheme.colorScheme.onSecondary,
+    modifier: Modifier = Modifier,
+    logoSize: Int = 120
 ) {
     Column(
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = modifier
     ) {
         Logo(
             backgroundColor = backgroundColor,
-            iconColor = iconColor
+            iconColor = iconColor,
+            size = logoSize
         )
         Text(
             text = "PetAlarms",
