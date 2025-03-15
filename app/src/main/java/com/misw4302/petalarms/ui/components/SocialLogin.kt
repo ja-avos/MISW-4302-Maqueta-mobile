@@ -21,7 +21,7 @@ fun SocialLogin(onClick : () -> Unit = {}, iconSize: Int = 48) {
         horizontalArrangement = Arrangement.spacedBy(4.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
-        IconButton(onClick = { /* Handle Facebook Click */ }) {
+        IconButton(onClick = onClick) {
             Icon(
                 painter = painterResource(id = R.drawable.facebook), // Replace with your icon
                 contentDescription = "Facebook",
@@ -30,7 +30,7 @@ fun SocialLogin(onClick : () -> Unit = {}, iconSize: Int = 48) {
             )
         }
 
-        IconButton(onClick = { /* Handle Google Click */ }) {
+        IconButton(onClick = onClick) {
             Icon(
                 painter = painterResource(id = R.drawable.google), // Replace with your icon
                 contentDescription = "Google",
@@ -39,7 +39,7 @@ fun SocialLogin(onClick : () -> Unit = {}, iconSize: Int = 48) {
             )
         }
 
-        IconButton(onClick = { /* Handle LinkedIn Click */ }) {
+        IconButton(onClick = onClick) {
             Icon(
                 painter = painterResource(id = R.drawable.linkedin), // Replace with your icon
                 contentDescription = "LinkedIn",
