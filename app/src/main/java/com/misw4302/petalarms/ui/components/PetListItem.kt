@@ -20,17 +20,21 @@ import coil.compose.rememberAsyncImagePainter
 
 @Preview
 @Composable
-fun PetListItem(name: String = "Pet Name", imageUrl: String = "https://www.hartz.com/wp-content/uploads/2022/04/small-dog-owners-1.jpg") {
+fun PetListItem(
+    name: String = "Pet Name",
+    imageUrl: String = "https://www.hartz.com/wp-content/uploads/2022/04/small-dog-owners-1.jpg",
+    onClick: () -> Unit = {}
+) {
     Card(
+        onClick = onClick,
         shape = RoundedCornerShape(16.dp),
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.secondary),
-        elevation = CardDefaults.cardElevation(defaultElevation = 4.dp),
+        elevation = CardDefaults.cardElevation(defaultElevation = 8.dp),
         modifier = Modifier
             .fillMaxWidth()
-            .padding(8.dp)
     ) {
         Row(
-            modifier = Modifier.padding(16.dp),
+            modifier = Modifier.padding(12.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
             Image(
@@ -38,7 +42,7 @@ fun PetListItem(name: String = "Pet Name", imageUrl: String = "https://www.hartz
                 contentDescription = "Pet Image",
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
-                    .size(46.dp)
+                    .size(40.dp)
                     .clip(CircleShape)
             )
             Spacer(modifier = Modifier.width(12.dp))

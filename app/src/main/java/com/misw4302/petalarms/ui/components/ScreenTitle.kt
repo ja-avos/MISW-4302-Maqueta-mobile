@@ -1,5 +1,6 @@
 package com.misw4302.petalarms.ui.components
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -21,7 +22,7 @@ import androidx.compose.ui.unit.sp
 
 @Preview
 @Composable
-fun ScreenTitle(title: String = "Screen Title") {
+fun ScreenTitle(title: String = "Screen Title", onBack: () -> Unit = {}) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -29,12 +30,12 @@ fun ScreenTitle(title: String = "Screen Title") {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        Logo()
+        Logo(size = 80)
         Spacer(modifier = Modifier.height(16.dp))
         Box(
             modifier = Modifier.fillMaxWidth(),
         ) {
-            BackBtn(modifier = Modifier.align(Alignment.CenterStart))
+            BackBtn(modifier = Modifier.align(Alignment.CenterStart), onClick = onBack)
             Text(
                 text = title,
                 modifier = Modifier

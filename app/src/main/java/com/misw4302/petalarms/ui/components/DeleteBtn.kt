@@ -11,21 +11,27 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 
 @Preview
 @Composable
-fun DeleteBtn(text: String = "Delete", onClick: () -> Unit = {}) {
+fun DeleteBtn(
+    text: String = "Delete",
+    onClick: () -> Unit = {},
+    modifier: Modifier = Modifier,
+    fontSize: TextUnit = MaterialTheme.typography.titleLarge.fontSize
+) {
     TextButton(
         onClick = onClick,
         colors = ButtonColors(
-            contentColor = MaterialTheme.colorScheme.onPrimary,
+            contentColor = MaterialTheme.colorScheme.error,
             containerColor = Color.Transparent,
             disabledContainerColor = MaterialTheme.colorScheme.tertiary,
             disabledContentColor = MaterialTheme.colorScheme.onTertiary
         )
     ) {
-        Text(text = text, fontSize = MaterialTheme.typography.titleLarge.fontSize)
+        Text(text = text, fontSize = fontSize)
     }
 
 }

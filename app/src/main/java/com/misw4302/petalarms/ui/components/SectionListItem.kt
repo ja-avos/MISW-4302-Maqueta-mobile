@@ -25,10 +25,14 @@ import com.misw4302.petalarms.R
 
 @Preview
 @Composable
-fun SectionListItem(title: String = "Section Name", backgroundResource: Int = R.mipmap.ic_banner_alarms_foreground) {
+fun SectionListItem(
+    title: String = "Section Name",
+    backgroundResource: Int = R.mipmap.ic_banner_alarms_foreground,
+    onClick: () -> Unit = {}
+) {
     Card(
         shape = RoundedCornerShape(16.dp),
-        onClick = {},
+        onClick = onClick,
         elevation = CardDefaults.cardElevation(defaultElevation = 8.dp),
         modifier = Modifier
             .fillMaxWidth()

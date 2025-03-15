@@ -37,6 +37,7 @@ import androidx.compose.ui.window.PopupProperties
 @Preview
 @Composable
 fun DropdownInput(
+    placeholder: String = "Placeholder",
     options: List<String> = listOf("Option 1", "Option 2", "Option 3"),
     multiSelect: Boolean = true
 ) {
@@ -56,7 +57,7 @@ fun DropdownInput(
             modifier = Modifier.fillMaxWidth()
         ) {
             Text(
-                text = if (selectedOptions.isEmpty()) "Dropdown" else selectedOptions.joinToString(", "),
+                text = if (selectedOptions.isEmpty()) placeholder else selectedOptions.joinToString(", "),
                 fontSize = 16.sp,
                 fontWeight = FontWeight.Bold,
                 color = MaterialTheme.colorScheme.onSurface

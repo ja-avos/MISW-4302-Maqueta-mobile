@@ -27,11 +27,12 @@ enum class InputType {
 
 @Preview
 @Composable
-fun GenericInput(placeholder: String = "Placeholder", type: InputType = InputType.TEXT) {
+fun GenericInput(placeholder: String = "Placeholder", type: InputType = InputType.TEXT, editable: Boolean = true) {
     var text by remember { mutableStateOf("") }
 
     TextField(
         value = text,
+        readOnly = !editable,
         onValueChange = { text = it },
         singleLine = true,
         placeholder = {
@@ -46,7 +47,8 @@ fun GenericInput(placeholder: String = "Placeholder", type: InputType = InputTyp
             fontSize = 14.sp,
             color = MaterialTheme.colorScheme.onSurface,
             fontWeight = FontWeight.Bold,
-            lineHeight = 12.sp
+            lineHeight = 12.sp,
+            fontFamily = MaterialTheme.typography.bodyLarge.fontFamily
         ),
         colors = TextFieldDefaults.colors(
             focusedContainerColor = Color(0xFFFFF7F2),

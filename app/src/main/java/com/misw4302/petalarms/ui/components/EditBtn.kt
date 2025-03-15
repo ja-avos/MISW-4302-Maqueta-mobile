@@ -15,9 +15,9 @@ import androidx.compose.ui.unit.dp
 
 @Preview
 @Composable
-fun EditBtn() {
+fun EditBtn(onCLick: () -> Unit = {}) {
     IconButton(
-        onClick = { /*TODO*/ },
+        onClick = onCLick,
         enabled = true,
         colors = IconButtonColors(
             contentColor = MaterialTheme.colorScheme.primary,

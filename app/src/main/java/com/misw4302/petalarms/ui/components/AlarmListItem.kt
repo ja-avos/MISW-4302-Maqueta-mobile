@@ -28,6 +28,7 @@ import coil.compose.rememberAsyncImagePainter
 @Preview
 @Composable
 fun AlarmListItem(
+    onClick: () -> Unit = {},
     title: String = "Alarm Name",
     schedule: String = "Schedule",
     imageUrls: List<String> = listOf(
@@ -36,12 +37,12 @@ fun AlarmListItem(
     ),
 ) {
     Card(
+        onClick = onClick,
         shape = RoundedCornerShape(16.dp),
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.secondary),
         elevation = CardDefaults.cardElevation(defaultElevation = 4.dp),
         modifier = Modifier
             .fillMaxWidth()
-            .padding(8.dp)
     ) {
         Row(
             modifier = Modifier.padding(16.dp),

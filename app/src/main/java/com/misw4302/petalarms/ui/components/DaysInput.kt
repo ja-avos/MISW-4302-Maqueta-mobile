@@ -25,7 +25,7 @@ import androidx.compose.ui.unit.sp
 
 @Preview
 @Composable
-fun DaySelection() {
+fun DaySelection(enabled: Boolean = true) {
     val days = listOf("L", "M", "I", "J", "V", "S", "D")
     val selectedDays = remember { mutableStateListOf("L", "V") }
 
@@ -51,6 +51,7 @@ fun DaySelection() {
                         CircleShape
                     )
                     .clickable {
+                        if (!enabled) return@clickable
                         if (isSelected) selectedDays.remove(day)
                         else selectedDays.add(day)
                     },
