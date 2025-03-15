@@ -51,7 +51,7 @@ fun LoginScreen(navController: NavController = rememberNavController()) {
             GenericInput(placeholder = "Contraseña", type = InputType.PASSWORD)
         }
         HorizontalDivider(modifier = Modifier.padding(36.dp))
-        SocialLogin(iconSize = 32)
+        SocialLogin(iconSize = 32, onClick = { navController.navigate("home") })
         Column(
             modifier = Modifier
                 .padding(16.dp)

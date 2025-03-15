@@ -43,7 +43,7 @@ fun SignupScreen(navController: NavController = rememberNavController()) {
             modifier = Modifier.padding(top = 36.dp)
         )
         Spacer(modifier = Modifier.height(16.dp))
-        SocialLogin(iconSize = 32)
+        SocialLogin(iconSize = 32, onClick = { navController.navigate("home") })
         HorizontalDivider(modifier = Modifier.padding(vertical = 20.dp))
         Column(
             verticalArrangement = Arrangement.spacedBy(12.dp),
